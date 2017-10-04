@@ -6,3 +6,4 @@ var adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
 var word = words[Math.floor(Math.random() * words.length)];
 var randomInsult = "You have a " + bodyPart + " that reminds me of a " + adjective + " " + word + "!!";
 randomInsult;
+
