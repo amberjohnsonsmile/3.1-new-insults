@@ -12,3 +12,4 @@ var animalPart = animalParts[Math.floor(Math.random() * animalParts.length)];
 
 var randomInsult = "Your " + bodyPart + " is more " + adjective + " than a " + animal + "'s " + animalPart + ".";
 randomInsult;
+
