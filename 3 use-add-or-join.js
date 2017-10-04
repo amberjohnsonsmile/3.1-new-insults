@@ -16,3 +16,4 @@ andInsult;
 //Putting the insult together using .join(" ")
 joinInsult = ["Your", relative + "'s greatest ambition was to become a", adjective, occupation + "!!"].join(" ");
 joinInsult;
+
