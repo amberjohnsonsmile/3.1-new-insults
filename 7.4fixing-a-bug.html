@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!-- Challenge: keep remainingLetters from decrementing when the same correct letter is guess more than once -->
+
+<html>
+<head>
+  <title>Harry Potter Hangman!</title>
+</head>
+<body>
+  <h1>Harry Potter Hangman!</h1>
+
+  <script>
+    // Create an array of words
+    var words = [
+      "magic",
+      "wizard",
+      "castle",
+      "spell",
+      "wand",
+      "transfiguration",
+      "charms",
+      "herbology",
+      "potions",
+      "arithmancy",
+      "divination",
+      "danger",
+      "evil",
+      "ghost",
+      "quidditch"
+    ];
+
+    // Pick a random word
+    var word = words[Math.floor(Math.random() * words.length)];
+
+    // Set up the answer array
+    var answerArray = [];
+    for (var i = 0; i < word.length; i++) {
+      answerArray[i] = "_";
+    }
+
+    var remainingLetters = word.length;
+    var remainingGuesses = 15;
+
+    // The game loop
+    while (remainingLetters > 0 && remainingGuesses > 0) {
+      // Show the player their progress
+      alert(answerArray.join(" "));
+
+      // Get a guess from the player
+      var guess = prompt("Guess a letter, or click Cancel to stop playing.");
+      // Convert guess to lowercase
+      guess = guess.toLowerCase();
+      if (guess === null) {
+        // Exit the game loop
+        break;
+      } else if (guess.length !== 1) {
+        alert("Please enter a single letter.");
+      } else {
+        // Update the game state with guess
+        remainingGuesses--;
+        for (var j = 0; j < word.length; j++) {
+          // New code for multiple-guess bug fix
+          if (word[j] === guess && answerArray[j] === "_") {
+            answerArray[j] = guess;
+            remainingLetters--;
+          }
+        }
+      }
+    // The end of the game loop
+    }
+
+    // Determine if the answer was correct vs. they ran out of guesses
+    if (remainingLetters === 0) {
+      alert(answerArray.join(" "));
+      alert("Good job! The answer was " + word);
+    } else {
+      alert("Good try! The answer was '" + word + "'. Better luck next time!");
+    }
+  </script>
+</body>
+</html>
