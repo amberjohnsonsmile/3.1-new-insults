@@ -3,7 +3,7 @@
 function areArraysSame(array1, array2) {
   // Exit the function if the arrays are different lengths
   if (array1.length !== array2.length) {
-    return;
+    return false;
   }
 
   // Compare the arrays
