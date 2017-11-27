@@ -1,6 +1,6 @@
 # JavaScript for Kids Challenges
 
-Completed programming challenges from JavaScript for Kids chapter 1-8.
+Completed programming challenges from **JavaScript for Kids** chapters 1-8.
 
 ![JavaScript for Kids Cover](https://images-na.ssl-images-amazon.com/images/I/51rznFjrxUL.jpg)
 
